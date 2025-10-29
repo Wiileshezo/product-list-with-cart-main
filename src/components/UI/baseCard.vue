@@ -10,6 +10,6 @@ export default {};
 
 <style scoped>
 .card {
-  padding: 1rem;
+  padding-block: 1rem;
 }
 </style>

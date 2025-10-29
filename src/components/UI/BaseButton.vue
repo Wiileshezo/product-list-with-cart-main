@@ -11,13 +11,16 @@ export default {};
 <style scoped>
 button {
   display: block;
-  padding: 1rem 5rem;
-  font-size: 1rem;
   border-radius: 3rem;
-  margin: auto;
   color: var(--Rose50);
   background-color: var(--Red);
   align-items: center;
   border: 0;
+}
+button:hover {
+  background-color: var(--Rose900);
+}
+button:active {
+  background-color: var(--Rose900);
 }
 </style>

@@ -42,4 +42,7 @@ body {
   font-size: 16px;
   background-color: var(--Rose100);
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>

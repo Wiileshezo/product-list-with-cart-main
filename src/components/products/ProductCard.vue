@@ -32,7 +32,7 @@ function addedToCart(product) {
         class="mob img-width"
       />
       <button
-        class="add-to-cart-btn display-flex btn-cart"
+        class="add-to-cart-btn display-flex btn-cart cursor-pointer"
         v-if="!product.isActive"
         @click="addedToCart(product)"
       >
@@ -45,7 +45,7 @@ function addedToCart(product) {
           height="2"
           fill="none"
           viewBox="0 0 10 2"
-          class="decre"
+          class="decre cursor-pointer"
           @click="cartStore.decrement(product.id)"
         >
           <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
@@ -57,7 +57,7 @@ function addedToCart(product) {
           height="10"
           fill="none"
           viewBox="0 0 10 10"
-          class="incre"
+          class="incre cursor-pointer"
           @click="cartStore.increment(product.id)"
         >
           <path

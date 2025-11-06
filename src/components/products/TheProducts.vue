@@ -27,7 +27,7 @@ import TheCart from "./TheCart.vue"; //eslint-disable-next-line
   border-radius: 1rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .container {
     flex-direction: row;
     align-items: flex-start;

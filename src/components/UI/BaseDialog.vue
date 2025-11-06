@@ -1,11 +1,4 @@
-<script setup>
-// import { useCartStore } from "@/components/stores/cart";
-// const cartStore = useCartStore();
-
-// function close() {
-//   cartStore.order = false;
-// }
-</script>
+<script setup></script>
 
 <template>
   <Teleport to="body">
@@ -43,12 +36,20 @@ dialog {
   padding: 2rem;
 }
 
+@media (width<770px) {
+  dialog {
+    max-height: 80vh;
+    width: clamp(360px, 33%, 500px);
+    overflow-y: auto;
+  }
+}
 @media (width<600px) {
   dialog {
-    height: 80vh;
+    max-height: 75vh;
     bottom: 0;
-    width: clamp(360px, 33%, 500px);
-    overflow-y: scroll;
+    width: clamp(310px, 33%, 500px);
+    overflow-y: auto;
+    transform: translate(-50%, -40%);
   }
 }
 </style>

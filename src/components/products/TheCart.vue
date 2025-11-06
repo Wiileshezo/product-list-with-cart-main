@@ -84,12 +84,26 @@ function confirmOrder() {
                 <p>${{ cartStore.getTotalPrice(item.id).toFixed(2) }}</p>
               </div>
             </div>
-            <img
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="10"
+              fill="none"
+              viewBox="0 0 10 10"
+              class="remove"
+              @click="cartStore.remove(item.id)"
+            >
+              <path
+                fill="#CAAFA7"
+                d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+              />
+            </svg>
+            <!-- <img
               src="@/assets/images/icon-remove-item.svg"
               alt=""
               class="remove"
               @click="cartStore.remove(item.id)"
-            />
+            /> -->
           </div>
           <hr />
         </div>
@@ -148,10 +162,10 @@ function confirmOrder() {
   padding-block: 1rem;
 }
 .details {
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .title {
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
 }
 p {
   font-size: 1rem;
@@ -185,6 +199,12 @@ p {
   padding: 0.2rem;
   width: 0.7rem;
 }
+.remove:hover {
+  border-color: var(--Rose900);
+}
+svg:hover path {
+  fill: var(--Rose900);
+}
 hr {
   border: none;
   width: auto;
@@ -217,6 +237,7 @@ hr {
 }
 .thum {
   border-radius: 0.5rem;
+  width: 4rem;
 }
 .margin-bottom {
   margin-bottom: 2rem;

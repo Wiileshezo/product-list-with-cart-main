@@ -11,7 +11,7 @@ function addedToCart(product) {
 </script>
 
 <template>
-  <base-card class="list">
+  <base-card class="products-container display-flex direction-column">
     <div>
       <img
         :src="product.desk"
@@ -32,13 +32,13 @@ function addedToCart(product) {
         class="mob img-width"
       />
       <button
-        class="cart1 btn-cart"
+        class="add-to-cart-btn display-flex btn-cart"
         v-if="!product.isActive"
         @click="addedToCart(product)"
       >
         <img src="@/assets/images/icon-add-to-cart.svg" alt="" />Add to Cart
       </button>
-      <button v-else class="cart2 btn-cart">
+      <button v-else class="plus-minus-btn display-flex btn-cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"
@@ -74,11 +74,22 @@ function addedToCart(product) {
 </template>
 
 <style scoped>
-.list {
-  line-height: 2.3rem;
+.display-flex {
   display: flex;
-  justify-content: center;
+}
+.direction-column {
   flex-direction: column;
+}
+.direction-row {
+  flex-direction: row;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.products-container {
+  line-height: 2.3rem;
+  justify-content: center;
   align-content: space-around;
 }
 
@@ -98,8 +109,7 @@ div {
   border-radius: 1rem;
 }
 
-.cart1 {
-  display: flex;
+.add-to-cart-btn {
   padding: 0.5rem;
   font-size: 0.9rem;
   border-radius: 3rem;
@@ -110,11 +120,11 @@ div {
   border: 1px solid var(--Rose500);
   justify-content: center;
 }
-.cart1:hover {
+.add-to-cart-btn:hover {
   border-color: var(--Red);
   color: var(--Red);
 }
-.cart2 {
+.plus-minus-btn {
   background-color: var(--Red);
   color: var(--Rose50);
   padding: 0.4rem;
@@ -127,11 +137,11 @@ div {
   justify-content: space-between;
 }
 
-.cart1 > svg {
+.add-to-cart-btn > svg {
   margin-right: 5px;
   width: 1.5rem;
 }
-.cart2 > svg {
+.plus-minus-btn > svg {
   border-radius: 50%;
   border: 1px solid var(--Rose50);
 }
@@ -141,14 +151,14 @@ svg:hover path {
 }
 
 .decre {
-  padding: 0.8rem 0.6rem;
+  padding: 0.7rem 0.5rem;
 }
 .decre:hover {
   background-color: var(--White);
   color: var(--Red);
 }
 .incre {
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 .incre:hover {
   background-color: var(--White);
